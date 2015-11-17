@@ -19,7 +19,7 @@ import { directive as preload } from 'vue-preload'
 Vue.directive('preload', preload)
 ```
 
-Then replace your `v-on:click="handleClick"` with `v-preload:"handleClick"`, and do make a small changes:
+Then replace your `v-on:click="handleClick"` with `v-preload:"handleClick"`, and make a small change:
 
 ```javascript
 ...
