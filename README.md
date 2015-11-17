@@ -6,7 +6,7 @@ Preloading data like a pro.
 
 Like what [InstantClick](http://instantclick.io/) said, before visitors click on a link, they hover over that link. Between these two events, 200 ms to 300 ms usually pass by. InstantClick makes use of that time to preload the page, so that the page is already there when you click.
 
-What the difference beween InstantClick and Vue Preload is the latter preload the data to store in state instead replace the HTML.
+What the difference beween InstantClick and Vue Preload is the latter preloads the data to store in state instead of replacing the HTML.
 
 ## How simple it could be
 
