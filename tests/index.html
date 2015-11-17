@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue-Preload</title>
+    <style>
+      body {
+        font: 15px/1.5 Lucida, Helvetica, serif;
+        margin: 0;
+        background-color: #f9f9f9;
+      }
+      #app {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #fff;
+        height: 100vmin;
+        box-shadow: 0 0 3px #e2e2e2;
+        position: relative;
+      }
+      #app:after {
+        content: '';
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+      }
+      .header {
+        margin: 0;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        border-top: none;
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+      .left, .right {
+        width: 50%;
+        float: left;
+      }
+      button {
+        padding: 10px 20px;
+        border: 1px solid #e2e2e2;
+        background-color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        outline: none;
+      }
+      button:hover {
+        background-color: #f9f9f9;
+      }
+      .star {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        line-height: 40px;
+        background-color: #fff;
+        color: #AFA62A;
+        text-align: center;
+        text-decoration: none;
+        border-top: 1px solid #e2e2e2;
+        font-weight: bold;
+        box-shadow: 0 0 2px #e2e2e2;
+      }
+      .star:hover {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">Vue Preload</div>
+      <div class="left">
+        <button @click="handleLoad">Normal</button>
+        <div v-if="leftTip">
+          <h2>{{ leftTip.category }}</h1>
+          <h3>{{ leftTip.tip }}</h2>
+        </div>
+      </div>
+      <div class="right">
+        <button v-preload="handlePreload">Preload</button>
+        <div v-if="rightTip">
+          <h2>{{ rightTip.category }}</h1>
+          <h3>{{ rightTip.tip }}</h2>
+        </div>
+      </div>
+      <a class="star" href="https://github.com/egoist/vue-preload">Star me on GitHub</a>
+    </div>
+    <script src="./_bundle.js"></script>
+  </body>
+</html>
