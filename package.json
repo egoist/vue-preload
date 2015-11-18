@@ -1,15 +1,16 @@
 {
   "name": "vue-preload",
-  "version": "0.0.13",
+  "version": "0.1.0",
   "description": "Preloading data for Vue component",
-  "main": "./lib/index.js",
+  "main": "./vue-preload.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel src --out-dir lib",
-    "babel-dev": "babel src --out-dir lib --watch",
-    "webpack": "webpack --config tests/_webpack.config.js -p",
-    "webpack-dev": "webpack --config tests/_webpack.config.js --watch",
-    "publish-demo": "npm run webpack && surge -d vue-preload.surge.sh -p tests"
+    "webpack-commonjs": "webpack --config tests/_webpack.commonjs.js -p",
+    "webpack-commonjs-dev": "webpack --config tests/_webpack.commonjs.js --watch",
+    "webpack-browser": "webpack --config tests/_webpack.config.js -p",
+    "webpack-browser-dev": "webpack --config tests/_webpack.config.js --watch",
+    "publish-demo": "npm run webpack && surge -d vue-preload.surge.sh -p tests",
+    "build": "npm run webpack-commonjs && npm run webpack-browser"
   },
   "repository": {
     "type": "git",
@@ -21,14 +22,16 @@
     "url": "https://github.com/egoist/vue-preload/issues"
   },
   "homepage": "https://github.com/egoist/vue-preload#readme",
-  "dependencies": {
-    "vue": "^1.0.8"
-  },
   "devDependencies": {
-    "babel-cli": "^6.1.18",
+    "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
-    "node-fetch": "^1.3.3",
-    "qwest": "^2.2.3",
-    "superagent": "^1.4.0"
+    "css-loader": "^0.23.0",
+    "cssnext": "^1.8.4",
+    "postcss-loader": "^0.8.0",
+    "postcss-nested": "^1.0.0",
+    "style-loader": "^0.13.0",
+    "stylus-loader": "^1.4.2",
+    "superagent": "^1.4.0",
+    "vue": "^1.0.8"
   }
 }
