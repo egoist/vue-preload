@@ -4,8 +4,6 @@
 [![NPM download](https://img.shields.io/npm/dm/vue-preload.svg?style=flat-square)](https://www.npmjs.com/package/vue-preload)
 [![David Status](https://img.shields.io/david/egoist/vue-preload.svg?style=flat-square)](https://david-dm.org/egoist/vue-preload)
 
-Preloading data like a pro.
-
 ## How does it work
 
 Like what [InstantClick](http://instantclick.io/) said, before visitors click on a link, they hover over that link. Between these two events, 200 ms to 300 ms usually pass by. InstantClick makes use of that time to preload the page, so that the page is already there when you click.
@@ -29,6 +27,8 @@ Then replace your `v-on:click="handleClick"` with `v-preload="handleClick"`, and
 ...
 handleClick(pr) {
   fetch.then().then(data => {
+    // pre-set states
+    pr.set({title: data.title})
     // add the following line to tell it preLoading ends
     pr.end()
   })
