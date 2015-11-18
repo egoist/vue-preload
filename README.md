@@ -1,5 +1,9 @@
 # Vue Preload
 
+[![NPM version](https://img.shields.io/npm/v/vue-preload.svg?style=flat-square)](https://www.npmjs.com/package/vue-preload)
+[![NPM download](https://img.shields.io/npm/dm/vue-preload.svg?style=flat-square)](https://www.npmjs.com/package/vue-preload)
+[![David Status](https://img.shields.io/david/egoist/vue-preload.svg?style=flat-square)](https://david-dm.org/egoist/vue-preload)
+
 Preloading data like a pro.
 
 ## How does it work
