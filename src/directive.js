@@ -3,9 +3,8 @@ import { util as _ } from 'vue'
 export const directive = {
   bind() {
     this.preLoading = false
-    this.tmp = {}
-    this.firstBlood = false
-    this.mouseOver = false
+    this.tmp = null
+    this.clickToPreload = false
     this.handleMouseOver = (e) => {
       if (this.preLoading) {
         return
@@ -14,15 +13,13 @@ export const directive = {
       this.vm[this.expression].call(null, this, e)
     }
     this.handleMouseLeave = (e) => {
-      this.mouseOver = false
-      this.firstBlood = false
     }
     this.handleClick = (e) => {
       e.preventDefault()
-      if (this.mouseOver && this.firstBlood) {
+      if (!this.tmp && !this.preLoading) {
+        this.clickToPreload = true
         return this.handleMouseOver(e)
       }
-      this.firstBlood = true
       this.setState(this.tmp)
     }
     _.on(this.el, 'mouseover', this.handleMouseOver)
@@ -36,13 +33,14 @@ export const directive = {
     for(const key in state) {
       this.vm.$set(key, state[key])
     }
+    this.tmp = null
   },
   end() {
     this.preLoading = false
-    if (this.mouseOver) {
+    if (this.clickToPreload) {
       this.setState(this.tmp)
+      this.clickToPreload = false
     }
-    this.mouseOver = true
   },
   reset() {
     _.off(this.el, 'mouseover', this.handleMouseOver)
