@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/vue-preload.svg?style=flat-square)](https://www.npmjs.com/package/vue-preload)
 [![NPM download](https://img.shields.io/npm/dm/vue-preload.svg?style=flat-square)](https://www.npmjs.com/package/vue-preload)
-[![David Status](https://img.shields.io/david/egoist/vue-preload.svg?style=flat-square)](https://david-dm.org/egoist/vue-preload)
+[![David Status](https://img.shields.io/david/dev/egoist/vue-preload.svg?style=flat-square)](https://david-dm.org/egoist/vue-preload)
 
 ## How does it work
 
@@ -23,6 +23,7 @@ Vue.use(VuePreload)
 // with options
 Vue.use(VuePreload, {
   // show the native progress bar
+  // put <preloading></preloading> in your root component
   showProgress: true,
   // excutes when click
   onStart() {},

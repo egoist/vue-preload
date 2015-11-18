@@ -1,8 +1,8 @@
-import directive from './directive'
+import register from './register'
 import './main.css'
 
 export default {
   install(Vue, options = {}) {
-    directive(Vue, options)
+    register(Vue, options)
   }
 }
