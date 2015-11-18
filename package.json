@@ -9,7 +9,7 @@
     "webpack-commonjs-dev": "webpack --config tests/_webpack.commonjs.js --watch",
     "webpack-browser": "webpack --config tests/_webpack.config.js -p",
     "webpack-browser-dev": "webpack --config tests/_webpack.config.js --watch",
-    "publish-demo": "npm run webpack && surge -d vue-preload.surge.sh -p tests",
+    "publish-demo": "surge -d vue-preload.surge.sh -p tests",
     "build": "npm run webpack-commonjs && npm run webpack-browser"
   },
   "repository": {
