@@ -19,11 +19,11 @@ import { directive as preload } from 'vue-preload'
 Vue.directive('preload', preload)
 ```
 
-Then replace your `v-on:click="handleClick"` with `v-preload:"handleClick"`, and make a small change:
+Then replace your `v-on:click="handleClick"` with `v-preload="handleClick"`, and make a small change:
 
 ```javascript
 ...
-handleClick (pr) {
+handleClick(pr) {
   fetch.then().then(data => {
     // add the following line to tell it preLoading ends
     pr.end()
@@ -31,6 +31,8 @@ handleClick (pr) {
 }
 ...
 ```
+
+[More detailed usage](/tests/_entry.js)
 
 ## License
 
