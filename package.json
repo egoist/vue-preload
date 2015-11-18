@@ -1,8 +1,8 @@
 {
   "name": "vue-preload",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Preloading data for Vue component",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel src --out-dir lib",
