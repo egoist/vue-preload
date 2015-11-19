@@ -1,6 +1,6 @@
 {
   "name": "vue-preload",
-  "version": "0.1.1",
+  "version": "0.1.11",
   "description": "Preloading data for Vue component",
   "main": "./vue-preload.js",
   "scripts": {

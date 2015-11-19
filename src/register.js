@@ -24,6 +24,14 @@ export default function (Vue, options) {
     })
   }
 
+  function isMobile() {
+    return navigator.userAgent.indexOf('Windows Phone') > -1
+      || navigator.userAgent.indexOf('Android') > -1
+      || navigator.userAgent.indexOf('iPad') > -1
+      || navigator.userAgent.indexOf('iPhone') > -1
+      || navigator.userAgent.indexOf('Mobile') > -1
+  }
+
   Vue.directive('preload', {
     bind() {
       this.preLoading = false
@@ -48,8 +56,12 @@ export default function (Vue, options) {
         }
         this.setState(this.tmp)
       }
-      _.on(this.el, 'mouseover', this.handleMouseOver)
-      _.on(this.el, 'click', this.handleClick)
+      if (isMobile()) {
+        _.on(this.el, 'touchstart', this.handleMouseOver)
+      } else {
+        _.on(this.el, 'mouseover', this.handleMouseOver)
+        _.on(this.el, 'click', this.handleClick)
+      }
     },
     set(obj) {
       this.tmp = obj
@@ -64,7 +76,7 @@ export default function (Vue, options) {
     end() {
       this.preLoading = false
       this.hideBar()
-      if (this.clickToPreload) {
+      if (this.clickToPreload || isMobile()) {
         this.setState(this.tmp)
         this.clickToPreload = false
       }
@@ -86,8 +98,12 @@ export default function (Vue, options) {
       }
     },
     reset() {
-      _.off(this.el, 'mouseover', this.handleMouseOver)
-      _.off(this.el, 'click', this.handleClick)
+      if (isMobile()) {
+        _.off(this.el, 'touchstart', this.handleMouseOver)
+      } else {
+        _.off(this.el, 'mouseover', this.handleMouseOver)
+        _.off(this.el, 'click', this.handleClick)
+      }
     },
     unbind() {
       this.reset()
