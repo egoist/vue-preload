@@ -14,7 +14,7 @@ What the difference between InstantClick and Vue Preload is the latter preloads 
 
 First install with `npm install vue-preload` and use the plugin, pretty neat huh?
 
-Or even CDN: `https://npmcdn.com/vue-preload@latest`
+Or even CDN: `https://unpkg.com/vue-preload@latest`
 
 ```javascript
 import Vue from 'vue'
